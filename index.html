@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PR ENTERPRISES | Electrical Wholesale & Godown | Hazaribagh</title>
+
+    <meta name="description" content="PR ENTERPRISES - Electrical Wholesale & Godown in Hurhuru, Hazaribagh, Jharkhand. Contact us for electrical products and wholesale enquiries.">
+
+    <meta name="keywords" content="PR Enterprises, Electrical Wholesale Hazaribagh, Electrical Godown Hurhuru, Electrical Products Jharkhand">
+
+    <meta name="author" content="PR ENTERPRISES">
+    <meta name="theme-color" content="#12345a">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #12345a, #0876b9);
+            color: white;
+            padding: 45px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 17px;
+            margin: 12px 0 0;
+        }
+
+        .gst {
+            display: inline-block;
+            background: white;
+            color: #12345a;
+            padding: 9px 16px;
+            border-radius: 20px;
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #092541;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 13px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffcc33;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h2 {
+            color: #12345a;
+            font-size: 30px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #12345a;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px 18px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.13);
+        }
+
+        .card .emoji {
+            font-size: 38px;
+        }
+
+        .card h3 {
+            color: #12345a;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .search-area {
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .search-area input,
+        .search-area select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd5df;
+            border-radius: 7px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffbf24;
+            color: #12345a;
+            padding: 13px 24px;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            margin: 7px 5px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #f0a900;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+
+        .call-btn {
+            background: #0876b9;
+            color: white;
+        }
+
+        .call-btn:hover {
+            background: #065b91;
+        }
+
+        .email-btn {
+            background: #12345a;
+            color: white;
+        }
+
+        .about-box,
+        .contact-box {
+            background: white;
+            max-width: 850px;
+            padding: 30px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .contact-box p {
+            overflow-wrap: anywhere;
+        }
+
+        .contact-box a:not(.btn) {
+            color: #0876b9;
+            text-decoration: none;
+        }
+
+        .map-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        .note {
+            color: #777;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #12345a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #ffcc33;
+            text-decoration: none;
+        }
+
+        .quick-contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 29px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            nav a {
+                margin: 7px;
+                font-size: 13px;
+            }
+
+            .section {
+                padding: 35px 14px;
+            }
+
+            .map-container iframe {
+                height: 300px;
+            }
+
+            .about-box,
+            .contact-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>PR ENTERPRISES</h1>
+    <p>Electrical Wholesale & Godown</p>
+    <p>Quality Electrical Products at Wholesale Prices</p>
+
+    <div class="gst">
+        GSTIN: 20CGVPD0067M1ZB
+    </div>
+
+    <div class="quick-contact">
+        <a class="btn call-btn" href="tel:+918294583340">
+            📞 Call Now
+        </a>
+
+        <a class="btn whatsapp-btn"
+           href="https://wa.me/918294583340"
+           target="_blank"
+           rel="noopener">
+            WhatsApp Us
+        </a>
+    </div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="#location">Location</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Welcome to PR ENTERPRISES</h2>
+
+    <p>
+        Your electrical wholesale and godown destination
+        in Hazaribagh, Jharkhand.
+        Explore our electrical product categories and
+        contact us for wholesale enquiries.
+    </p>
+
+    <a href="#products" class="btn">Explore Products</a>
+
+    <a href="https://wa.me/918294583340"
+       class="btn whatsapp-btn"
+       target="_blank"
+       rel="noopener">
+        Wholesale Enquiry
+    </a>
+</section>
+
+<section class="section" id="about">
+    <h2>About Us</h2>
+
+    <div class="about-box">
+        <p>
+            <strong>PR ENTERPRISES</strong> is an electrical
+            wholesale and godown business located in
+            Hurhuru, Hazaribagh, Jharkhand.
+        </p>
+
+        <p>
+            We aim to serve customers, retailers,
+            electricians, contractors and businesses
+            looking for electrical products.
+        </p>
+
+        <p>
+            Contact us for product availability,
+            wholesale rates and business enquiries.
+        </p>
+
+        <p><strong>Business Name:</strong> PR ENTERPRISES</p>
+
+        <p>
+            <strong>Business Type:</strong>
+            Electrical Wholesale & Godown
+        </p>
+
+        <p><strong>GSTIN:</strong> 20CGVPD0067M1ZB</p>
+    </div>
+</section>
+
+<section class="section" id="products">
+    <h2>Our Product Categories</h2>
+
+    <p>
+        Explore our electrical product categories.
+        Please contact us to confirm stock and wholesale rates.
+    </p>
+
+    <div class="search-area">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search electrical products..."
+            oninput="filterProducts()"
+        >
+
+        <select id="categoryFilter" onchange="filterProducts()">
+            <option value="all">All Categories</option>
+            <option value="lighting">Lighting</option>
+            <option value="wiring">Wires & Cables</option>
+            <option value="switches">Switches & Sockets</option>
+            <option value="protection">Electrical Protection</option>
+            <option value="fans">Fans & Appliances</option>
+            <option value="accessories">Accessories & Tools</option>
+            <option value="power">Power & Backup</option>
+        </select>
+    </div>
+
+    <div class="card-container" id="productContainer">
+
+        <div class="card" data-category="wiring">
+            <div class="emoji">🔌</div>
+            <h3>Electric Wires & Cables</h3>
+            <p>Electrical wires, house wiring and cables.</p>
+        </div>
+
+        <div class="card" data-category="lighting">
+            <div class="emoji">💡</div>
+            <h3>LED Bulbs & Tube Lights</h3>
+            <p>LED bulbs, tube lights and lighting products.</p>
+        </div>
+
+        <div class="card" data-category="lighting">
+            <div class="emoji">✨</div>
+            <h3>Panel Lights & Downlights</h3>
+            <p>Panel lights, downlights and decorative lighting.</p>
+        </div>
+
+        <div class="card" data-category="fans">
+            <div class="emoji">🌀</div>
+            <h3>Ceiling & Exhaust Fans</h3>
+            <p>Ceiling fans and ventilation products.</p>
+        </div>
+
+        <div class="card" data-category="switches">
+            <div class="emoji">🔘</div>
+            <h3>Modular Switches</h3>
+            <p>Modular switches and electrical switch plates.</p>
+        </div>
+
+        <div class="card" data-category="switches">
+            <div class="emoji">🔌</div>
+            <h3>Sockets & Plugs</h3>
+            <p>Electrical sockets, plugs and connectors.</p>
+        </div>
+
+        <div class="card" data-category="protection">
+            <div class="emoji">⚡</div>
+            <h3>MCB, RCCB & MCCB</h3>
+            <p>Electrical circuit protection products.</p>
+        </div>
+
+        <div class="card" data-category="protection">
+            <div class="emoji">🗄️</div>
+            <h3>Distribution Boards</h3>
+            <p>Electrical distribution boards and panels.</p>
+        </div>
+
+        <div class="card" data-category="wiring">
+            <div class="emoji">📏</div>
+            <h3>PVC Conduit Pipes</h3>
+            <p>Conduit pipes and wiring installation materials.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🧰</div>
+            <h3>Electrical Tape</h3>
+            <p>Insulation tape and electrical accessories.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🔧</div>
+            <h3>Electrical Tools & Testers</h3>
+            <p>Electrical testing and installation tools.</p>
+        </div>
+
+        <div class="card" data-category="power">
+            <div class="emoji">🔋</div>
+            <h3>Inverter & Battery</h3>
+            <p>Power backup products and batteries.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🔩</div>
+            <h3>Holders & Connectors</h3>
+            <p>Bulb holders, connectors and fittings.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🔔</div>
+            <h3>Door Bells & Buzzers</h3>
+            <p>Door bells and electrical signalling products.</p>
+        </div>
+
+        <div class="card" data-category="power">
+            <div class="emoji">⚙️</div>
+            <h3>Voltage Stabilizers</h3>
+            <p>Voltage stabilizers and power accessories.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🛠️</div>
+            <h3>Earthing Materials</h3>
+            <p>Earthing and electrical safety materials.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🔗</div>
+            <h3>Cable Lugs & Accessories</h3>
+            <p>Cable lugs and wire connection accessories.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">🔌</div>
+            <h3>Capacitors & Regulators</h3>
+            <p>Electrical capacitors and fan regulators.</p>
+        </div>
+
+        <div class="card" data-category="accessories">
+            <div class="emoji">📦</div>
+            <h3>Electrical Fittings</h3>
+            <p>General electrical fittings and accessories.</p>
+        </div>
+
+    </div>
+
+    <p class="note">
+        Note: Product categories are indicative only.
+        Actual availability and rates must be confirmed with the business.
+    </p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
+
+        <p>
+            <strong>Business Name:</strong>
+            PR ENTERPRISES
+        </p>
+
+        <p>
+            <strong>Business Type:</strong>
+            Electrical Wholesale & Godown
+        </p>
+
+        <p>
+            <strong>GSTIN:</strong>
+            20CGVPD0067M1ZB
+        </p>
+
+        <p>
+            <strong>Owner:</strong>
+            PRADEEP KUMAR
+        </p>
+
+        <p>
+            <strong>Mobile Number:</strong>
+            <a href="tel:+918294583340">8294583340</a>
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:pradeep%20kumarhzb250@gmail.com">
+                pradeep kumarhzb250@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <strong>Address:</strong><br>
+            PRADEEP KUMAR, MUNIYA DEVI, BABA PATH,
+            NEAR HANUMAN MANDIR,
+            MAHENDRA ORANGE SERVICE CENTRE,
+            HURHURU, HAZARIBAGH,
+            Hazaribag, Jharkhand, 825301
+        </p>
+
+        <div class="quick-contact">
+            <a class="btn call-btn" href="tel:+918294583340">
+                📞 Call Now
+            </a>
+
+            <a class="btn whatsapp-btn"
+               href="https://wa.me/918294583340?text=Hello%20PR%20ENTERPRISES%2C%20I%20want%20to%20enquire%20about%20electrical%20products."
+               target="_blank"
+               rel="noopener">
+                WhatsApp Now
+            </a>
+
+            <a class="btn email-btn"
+               href="mailto:pradeep%20kumarhzb250@gmail.com?subject=Electrical%20Product%20Enquiry">
+                ✉ Send Email
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="location">
+    <h2>Our Location</h2>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d227.85124212984556!2d85.36433697244065!3d23.973878409567433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1793606012835!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </div>
+
+    <p>
+        Hurhuru, Hazaribagh, Jharkhand - 825301
+    </p>
+</section>
+
+<footer>
+    <h3>PR ENTERPRISES</h3>
+
+    <p>Electrical Wholesale & Godown</p>
+
+    <p>GSTIN: 20CGVPD0067M1ZB</p>
+
+    <p>Mobile: <a href="tel:+918294583340">8294583340</a></p>
+
+    <p>
+        Email:
+        <a href="mailto:pradeep%20kumarhzb250@gmail.com">
+            pradeep kumarhzb250@gmail.com
+        </a>
+    </p>
+
+    <p>Hurhuru, Hazaribagh, Jharkhand - 825301</p>
+
+    <p>
+        © <span id="year"></span> PR ENTERPRISES.
+        All Rights Reserved.
+    </p>
+</footer>
+
+<script>
+    function filterProducts() {
+        const searchInput = document
+            .getElementById("searchInput")
+            .value.toLowerCase();
+
+        const category = document
+            .getElementById("categoryFilter")
+            .value;
+
+        const cards = document.querySelectorAll(
+            "#productContainer .card"
+        );
+
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            const cardCategory = card.dataset.category;
+
+            const matchesSearch = text.includes(searchInput);
+
+            const matchesCategory =
+                category === "all" || category === cardCategory;
+
+            card.style.display =
+                matchesSearch && matchesCategory ? "block" : "none";
+        });
+    }
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
