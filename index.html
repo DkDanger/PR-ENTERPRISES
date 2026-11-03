@@ -16,7 +16,8 @@
     img{display:block;max-width:100%}
     a{color:inherit}
     .topbar{background:#092541;color:#fff;padding:9px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
-    .topbar a{color:#fff;text-decoration:none}\n    .language-switch{background:#fff;color:var(--navy);border:1px solid #c7d9e8;border-radius:5px;padding:6px 12px;font-weight:700;cursor:pointer;min-height:34px}
+    .topbar a{color:#fff;text-decoration:none}
+    a[href^="tel:"]::before{content:"📞 ";font-family:Arial,sans-serif}\n    a[href^="mailto:"]::before{content:"✉️ ";font-family:Arial,sans-serif}\n    .language-switch{background:#fff;color:var(--navy);border:1px solid #c7d9e8;border-radius:5px;padding:6px 12px;font-weight:700;cursor:pointer;min-height:34px}
     header{background:linear-gradient(120deg,#102f50,#0876b9);color:#fff;padding:30px 5% 48px}
     .header-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
     .brand h1{font-size:clamp(30px,5vw,48px);letter-spacing:1.5px;margin:0;line-height:1.15}
