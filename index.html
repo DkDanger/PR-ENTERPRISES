@@ -16,7 +16,7 @@
     img{display:block;max-width:100%}
     a{color:inherit}
     .topbar{background:#092541;color:#fff;padding:9px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
-    .topbar a{color:#fff;text-decoration:none}
+    .topbar a{color:#fff;text-decoration:none}\n    .language-switch{background:#fff;color:var(--navy);border:1px solid #c7d9e8;border-radius:5px;padding:6px 12px;font-weight:700;cursor:pointer;min-height:34px}
     header{background:linear-gradient(120deg,#102f50,#0876b9);color:#fff;padding:30px 5% 48px}
     .header-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
     .brand h1{font-size:clamp(30px,5vw,48px);letter-spacing:1.5px;margin:0;line-height:1.15}
@@ -84,7 +84,7 @@
 <body>
   <div class="topbar">
     <span>PR ENTERPRISES | Wholesale &amp; Retail</span>
-    <span><a href="tel:+918294583340">8294583340</a> &nbsp;|&nbsp; <a href="mailto:pradeepkumarhzb250@gmail.com">Email Us</a></span>
+    <span><a href="tel:+918294583340">8294583340</a> &nbsp;|&nbsp; <a href="mailto:pradeepkumarhzb250@gmail.com">Email Us</a> &nbsp;|&nbsp; <button class="language-switch" id="languageToggle" type="button">हिन्दी</button></span>
   </div>
 
   <header>
@@ -242,25 +242,88 @@
   </footer>
 
   <script>
+    const translations = {
+      "PR ENTERPRISES | Wholesale & Retail":"PR ENTERPRISES | होलसेल एवं रिटेल",
+      "Email Us":"ईमेल करें","Wholesale & Retail | Hazaribagh, Jharkhand":"होलसेल एवं रिटेल | हजारीबाग, झारखंड",
+      "Call for Enquiry":"पूछताछ के लिए कॉल करें","WhatsApp Enquiry":"व्हाट्सऐप पर पूछताछ करें",
+      "Home":"होम","About Us":"हमारे बारे में","Products":"उत्पाद","Contact":"संपर्क","Location":"स्थान",
+      "Reliable Supply • Business Enquiries":"विश्वसनीय आपूर्ति • व्यावसायिक पूछताछ",
+      "Your Wholesale & Retail Partner in Hazaribagh":"हजारीबाग में आपका होलसेल एवं रिटेल पार्टनर",
+      "PR ENTERPRISES welcomes retailers, contractors, electricians, institutions and business customers. Contact us for product details, availability and wholesale and retail quotations.":"PR ENTERPRISES रिटेलर्स, ठेकेदारों, इलेक्ट्रीशियन, संस्थानों और व्यावसायिक ग्राहकों का स्वागत करता है। उत्पादों की जानकारी, उपलब्धता और होलसेल एवं रिटेल कोटेशन के लिए संपर्क करें।",
+      "Explore Product Range":"उत्पादों की श्रेणियाँ देखें","Contact Business":"व्यवसाय से संपर्क करें",
+      "About PR ENTERPRISES":"PR ENTERPRISES के बारे में","Professional wholesale and retail services from Hazaribagh, Jharkhand":"हजारीबाग, झारखंड से प्रोफेशनल होलसेल एवं रिटेल सेवाएँ",
+      "Business Overview":"व्यवसाय का परिचय",
+      "PR ENTERPRISES is a Hazaribagh-based wholesale and retail business. We welcome enquiries from individual buyers, retailers, contractors and organisations for product sourcing and wholesale and retail requirements.":"PR ENTERPRISES हजारीबाग स्थित एक होलसेल एवं रिटेल व्यवसाय है। हम व्यक्तिगत ग्राहकों, रिटेलर्स, ठेकेदारों और संस्थानों से उत्पादों की खरीद तथा होलसेल एवं रिटेल संबंधी पूछताछ का स्वागत करते हैं।",
+      "Share your required product, quantity and delivery location to discuss availability and a quotation.":"उपलब्धता और कीमत जानने के लिए आवश्यक उत्पाद, मात्रा और डिलीवरी का स्थान बताएं।",
+      "Business Name":"व्यवसाय का नाम","Business Type":"व्यवसाय का प्रकार","GSTIN":"जीएसटीआईएन",
+      "Product Categories":"उत्पादों की श्रेणियाँ","Illustrative product range — ask us to confirm availability and rates":"उत्पादों की उदाहरणात्मक सूची — उपलब्धता और कीमत की पुष्टि के लिए संपर्क करें",
+      "All Categories":"सभी श्रेणियाँ","Pipes & Conduits":"पाइप एवं कंड्यूट","Electrical Boxes":"इलेक्ट्रिकल बॉक्स","MCB & Distribution":"एमसीबी एवं डिस्ट्रीब्यूशन","Wires & Accessories":"तार एवं एक्सेसरीज़",
+      "PVC Electrical Conduit Pipes":"पीवीसी इलेक्ट्रिकल कंड्यूट पाइप","Conduit pipe options for electrical wiring installations.":"इलेक्ट्रिकल वायरिंग के लिए कंड्यूट पाइप के विकल्प।",
+      "MCB Box & Distribution Board":"एमसीबी बॉक्स एवं डिस्ट्रीब्यूशन बोर्ड","Distribution boards and circuit protection enclosures.":"डिस्ट्रीब्यूशन बोर्ड और सर्किट सुरक्षा बॉक्स।",
+      "Fan Box & Junction Box":"फैन बॉक्स एवं जंक्शन बॉक्स","Electrical junction box reference image; ask for fan box type and size.":"इलेक्ट्रिकल जंक्शन बॉक्स का उदाहरण; फैन बॉक्स के प्रकार और आकार के लिए पूछें।",
+      "Electrical Junction Boxes":"इलेक्ट्रिकल जंक्शन बॉक्स","Junction box solutions for electrical connections.":"इलेक्ट्रिकल कनेक्शन के लिए जंक्शन बॉक्स।",
+      "PVC Concealed / Modular Box":"पीवीसी कंसील्ड / मॉड्यूलर बॉक्स","Concealed boxes for switch and socket installations.":"स्विच और सॉकेट लगाने के लिए कंसील्ड बॉक्स।",
+      "PVC Pipe & Tubing":"पीवीसी पाइप एवं ट्यूबिंग","PVC tubing and conduit-related material references.":"पीवीसी ट्यूबिंग और कंड्यूट से संबंधित सामग्री।",
+      "Electrical Wires & Wiring":"इलेक्ट्रिकल वायर एवं वायरिंग","Wiring and cable-related product enquiries.":"वायरिंग और केबल से संबंधित उत्पादों की पूछताछ।",
+      "MCB, RCCB & Circuit Breakers":"एमसीबी, आरसीसीबी एवं सर्किट ब्रेकर","Electrical protection equipment and related enquiries.":"इलेक्ट्रिकल सुरक्षा उपकरणों से संबंधित पूछताछ।",
+      "Conduit Fittings & Accessories":"कंड्यूट फिटिंग्स एवं एक्सेसरीज़","Conduit-related fittings and installation accessories.":"कंड्यूट से संबंधित फिटिंग्स और इंस्टॉलेशन एक्सेसरीज़।",
+      "Enquire for rates":"कीमत पूछें","No matching products found. Try another search.":"कोई मिलता-जुलता उत्पाद नहीं मिला। दूसरी खोज करें।",
+      "Product photographs are reference images, not a confirmation of current stock, brand, specification or price. Please contact PR ENTERPRISES to confirm availability. Image credits and licence links are listed in the image credits file in this repository.":"उत्पादों की तस्वीरें केवल उदाहरण के लिए हैं। ये वर्तमान स्टॉक, ब्रांड, स्पेसिफिकेशन या कीमत की पुष्टि नहीं करतीं। उपलब्धता जानने के लिए PR ENTERPRISES से संपर्क करें। तस्वीरों के क्रेडिट और लाइसेंस की जानकारी रिपॉजिटरी की IMAGE-CREDITS.md फाइल में दी गई है।",
+      "Contact PR ENTERPRISES":"PR ENTERPRISES से संपर्क करें","For wholesale and retail requirements, product details and quotations":"होलसेल एवं रिटेल आवश्यकताओं, उत्पाद की जानकारी और कोटेशन के लिए",
+      "Business Contact Details":"व्यवसाय का संपर्क विवरण","Business:":"व्यवसाय:","Business Type:":"व्यवसाय का प्रकार:","Contact Person:":"संपर्क व्यक्ति:","Mobile:":"मोबाइल:","Email:":"ईमेल:","Address:":"पता:",
+      "Call Now":"अभी कॉल करें","WhatsApp":"व्हाट्सऐप","Send Email":"ईमेल भेजें","Our Location":"हमारा पता",
+      "Baba Path, Hurhuru, Hazaribagh, Jharkhand – 825301":"बाबा पथ, हुरहुरू, हजारीबाग, झारखंड – 825301",
+      "All Rights Reserved.":"सर्वाधिकार सुरक्षित।",
+      "Product images are used as reference photographs. See the repository's IMAGE-CREDITS.md for author and licence information.":"उत्पादों की तस्वीरें केवल संदर्भ के लिए हैं। इनके फोटोग्राफर और लाइसेंस की जानकारी रिपॉजिटरी की IMAGE-CREDITS.md फाइल में देखें।"
+    };
+    let language = "en";
     const searchInput = document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
     const cards = Array.from(document.querySelectorAll(".product-card"));
     const emptyState = document.getElementById("emptyState");
+    const toggle = document.getElementById("languageToggle");
+    const original = new WeakMap();
 
     function filterProducts() {
       const query = searchInput.value.trim().toLowerCase();
       const category = categoryFilter.value;
       let visible = 0;
       cards.forEach(card => {
-        const matchesText = card.innerText.toLowerCase().includes(query);
-        const matchesCategory = category === "all" || card.dataset.category === category;
-        const show = matchesText && matchesCategory;
+        const show = card.innerText.toLowerCase().includes(query) && (category === "all" || card.dataset.category === category);
         card.hidden = !show;
         if (show) visible++;
       });
       emptyState.style.display = visible ? "none" : "block";
     }
 
+    function setLanguage(next) {
+      language = next;
+      document.documentElement.lang = next;
+      document.title = next === "hi" ? "PR ENTERPRISES | होलसेल एवं रिटेल | हजारीबाग, झारखंड" : "PR ENTERPRISES | Wholesale & Retail | Hazaribagh, Jharkhand";
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      let el;
+      while ((el = walker.nextNode())) {
+        if (el.children.length === 0) {
+          if (!original.has(el)) original.set(el, el.textContent);
+          const en = original.get(el).trim();
+          if (translations[en]) el.textContent = next === "hi" ? translations[en] : en;
+        }
+      }
+      searchInput.placeholder = next === "hi" ? "उत्पाद खोजें..." : "Search products...";
+      searchInput.setAttribute("aria-label", next === "hi" ? "उत्पाद खोजें" : "Search products");
+      categoryFilter.setAttribute("aria-label", next === "hi" ? "श्रेणी के अनुसार उत्पाद चुनें" : "Filter products by category");
+      [...categoryFilter.options].forEach(o => {
+        if (!o.dataset.en) o.dataset.en = o.textContent;
+        o.textContent = next === "hi" ? (translations[o.dataset.en] || o.dataset.en) : o.dataset.en;
+      });
+      document.querySelector("nav").setAttribute("aria-label", next === "hi" ? "मुख्य नेविगेशन" : "Main navigation");
+      document.querySelector(".map-frame").title = next === "hi" ? "PR ENTERPRISES का लोकेशन मैप" : "PR ENTERPRISES location map";
+      toggle.textContent = next === "hi" ? "English" : "हिन्दी";
+      toggle.setAttribute("aria-label", next === "hi" ? "Switch website to English" : "वेबसाइट की भाषा हिंदी करें");
+      filterProducts();
+    }
+
+    toggle.addEventListener("click", () => setLanguage(language === "en" ? "hi" : "en"));
     searchInput.addEventListener("input", filterProducts);
     categoryFilter.addEventListener("change", filterProducts);
     document.getElementById("year").textContent = new Date().getFullYear();
